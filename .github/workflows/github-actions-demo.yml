@@ -1,18 +1,16 @@
-name: Build and deploy
+name: Deploy website
 on: push
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Deploy on Commit
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@main
-      
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v3.0.0
+      uses: actions/checkout@main    
+    - name: 📂 Sync Files
+      uses: SamKirkland/web-deploy@v1
       with:
-        server: access958372477.webspace-data.io
-        username: u111854262
-        password: ${{ secrets.ftp_password }}
-        protocol: ftps
-        port: 22
+        target-server: access958372477.webspace-data.io
+        remote-user: u111854262
+        private-ssh-key: ${{ secrets.ftp_password }}
+        destination-path: ~/
