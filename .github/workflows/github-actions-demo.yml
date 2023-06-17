@@ -9,7 +9,7 @@ jobs:
       uses: actions/checkout@main
       
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.0.0
+      uses: SamKirkland/FTP-Deploy-Action@v3.0.0
       with:
         server: access958372477.webspace-data.io
         username: u111854262
