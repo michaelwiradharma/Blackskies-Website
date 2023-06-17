@@ -14,5 +14,5 @@ jobs:
         server: access958372477.webspace-data.io
         username: u111854262
         password: ${{ secrets.ftp_password }}
-        protocol: ftps-legacy
+        protocol: ftp
         port: 22
