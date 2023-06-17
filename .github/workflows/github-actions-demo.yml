@@ -1,5 +1,4 @@
 name: Build and deploy
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: push
 jobs:
   web-deploy:
@@ -8,10 +7,10 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
+      
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: access958372477.webspace-data.io
         username: u111854262
         password: ${{ secrets.ftp_pasword }}
-        port: 22
