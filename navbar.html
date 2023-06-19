@@ -5,10 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgba(0, 0, 0, 0.8);">
         <div class="container">
             <a class="navbar-brand text-light d-flex align-items-center" href="index.html"><img
                     src="images/bskieslogo.png" alt="Logo" width="60"
@@ -19,12 +31,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="navbar-nav w-100 justify-content-evenly">
-                    <a class="nav-link text-light" aria-current="page" href="#">Equities</a>
-                    <a class="nav-link text-light" href="#">Ventures</a>
-                    <a class="nav-link text-light" href="#">Insights</a>
+                <ul class="navbar-nav w-100 justify-content-evenly">
+                    <a class="nav-link text-light" href="equities.html">Equities</a>
+                    <a class="nav-link text-light" href="ventures.html">Ventures</a>
+                    <a class="nav-link text-light" href="insights.html">Insights</a>
                     <a class="nav-link text-light" href="team.html">Team</a>
-                    <a class="nav-item dropdown">
+                    <a class="nav-link text-light" href="application.html">Join Us</a>
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             About Us
@@ -34,8 +47,8 @@
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
-                    </a>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
