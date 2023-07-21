@@ -1,0 +1,74 @@
+body {
+    /* background-color: #151515; */
+    background-color: black;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.inner-img {
+    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.person {
+    margin: 2rem;
+
+}
+
+.person-bg {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.person-details {
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+    height: 300px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+
+    /* -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    transition: all 200ms ease-in; */
+}
+
+.person-details:hover { 
+    opacity: 1;
+    transform: scale(1.1);
+
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+}
+
+.person-details:hover + .person-card img { 
+    opacity: 0;
+
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+}
+
+.person-card > img {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+}
+
+
+.role {
+    font-family: 'Lato-light', sans-serif;
+}
+
