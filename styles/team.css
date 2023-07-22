@@ -16,19 +16,22 @@ body {
     border-radius: 15px;
     justify-content: space-around;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
 }
 
 .person {
     margin: 2rem;
     position: relative;
+    width: auto;
+    height: fit-content;
 }
 
 .person-details {
     position: relative;
     border-radius: 50%;
-    height: 300px;
-    width: 300px;
+    /* width: auto; */
+    aspect-ratio: 1;
     opacity: 1;
     z-index: 0;
     background-color: rgba(255, 255, 255, 0.7);
@@ -51,7 +54,9 @@ body {
 
 .person-details > img {
     border-radius: inherit;
-    position: absolute;
+    position: relative;
+    z-index: 1;
+    transform: scale(1.01);
 
     -webkit-transition: all 200ms ease-in;
     -moz-transition: all 200ms ease-in;
@@ -62,9 +67,8 @@ body {
 
 .person-details:hover > img { 
     opacity: 0;
+    transform: scale(1.01);
 }
-
-
 
 .role {
     font-family: 'Lato-light', sans-serif;
