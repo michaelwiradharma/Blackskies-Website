@@ -6,78 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <title>BlackSkies Investments</title>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
 
 </head>
 
-<style>
-    body {
-        background-color: black;
-    }
-
-    .wave {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: scaleY(-1) translate(0, 100%);
-    }
-
-    .wave svg {
-        position: relative;
-        display: block;
-        width: calc(151% + 1.3px);
-        height: 150px;
-    }
-
-    .wave .shape-fill {
-        fill: gray;
-        opacity: 0.5;
-    }
-
-    .intro {
-        background: rgba(128, 128, 128, 0.5)
-    }
-
-    .wave2 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: scaleX(-1);
-    }
-
-    .wave2 svg {
-        position: relative;
-        display: block;
-        width: calc(187% + 1.3px);
-        height: 150px;
-    }
-
-    .wave2 .shape-fill {
-        fill: gray;
-        opacity: 0.5;
-    }
-</style>
-
 <body>
     <div style="position:absolute">
-        <img src="images/stars.mp4" class="img-fluid w-100"
-            style="opacity: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); position:fixed" />
+        <img id="stars" src="images/stars.mp4" class="stars img-fluid w-100"
+            style="opacity: 50%; left: 50%; top: 50%; position:fixed" />
         <img src="images/bskies no bg.png" class="img-fluid w-50"
             style="opacity: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); position:fixed" />
     </div>
@@ -88,15 +35,15 @@
     </div>
 
     <!-- Landing Page -->
-    <div class="container-fluid py-md-5 d-flex align-items-center position-relative" style="height: 70vh">
+    <div class="container-fluid py-md-5 d-flex align-items-center position-relative" style="height: 80vh">
         <div class="col-4 col-md-6"></div>
         <div class="col-8 col-md-6 h-100 d-flex justify-content-center align-items-center position-relative">
             <div class="container-fluid d-flex flex-column justify-content-center position-absolute h-100"
                 style="top: 0;">
-                <h1 class="text-light">Blackskies Investments</h1>
-                <h3 class="text-light">Capture the Stars</h3>
-                <p class="text-light">We are a student-run investment fund at UC Berkeley.</p>
-                <div class="d-flex w-100">
+                <h1 class="header text-light">Blackskies Investments</h1>
+                <h3 class="header text-light">Capture the Stars</h3>
+                <p class="header text-light">We are a student-run investment fund at UC Berkeley.</p>
+                <div class="header d-flex w-100">
                     <a href="contact.html" role="button" class="btn btn-outline-light me-2">Contact Us</a>
                     <a href="#" role="button" class="btn btn-outline-light me-2">Apply</a>
                     <!-- <a type="button" class="btn btn-outline-light mx-2">Ventures</a> -->
@@ -156,8 +103,8 @@
     </section>
 
     <script>
-        $.get("navbar.html", function (data) {
-            $("#nav-content-p").replaceWith(data);
+        $.get("src/navbar.html", function (data) {
+            $("#nav-placeholder").replaceWith(data);
         });
         // animation
         // $(window).on("scroll", function () {
@@ -173,6 +120,32 @@
         //         }
         //     }
         // });
+
+        const stars = document.getElementById("stars");
+
+        window.onmousemove = e => {
+            const mouseX = e.clientX,
+                  mouseY = e.clientY;
+
+            const xDec = mouseX / window.innerWidth,
+                  yDec = mouseY / window.innerHeight;
+
+            const maxX = stars.offsetWidth - window.innerWidth;
+            const maxY = stars.offsetHeight - window.innerHeight;
+                  
+            const panX = maxX * xDec * -1;
+            const panY = maxY * yDec * -1;
+            console.log()
+
+            stars.animate({
+                transform: `translate(${panX}px, ${panY}px)`
+            }, {
+                duration: 4000,
+                fill: "forwards",
+                easing: "ease"
+            })
+        }
+
     </script>
 </body>
 
