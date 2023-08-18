@@ -6,27 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <title>BlackSkies Investments</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/styles/index.css">
 
 </head>
 
 <body>
-    <div style="position:absolute">
-        <img id="stars" src="images/stars.mp4" class="stars img-fluid w-100"
-            style="opacity: 50%; left: 50%; top: 50%; position:fixed" />
-        <img src="images/bskies no bg.png" class="img-fluid w-50"
-            style="opacity: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); position:fixed" />
+    <div class="floating-bg">
+        <img id="stars" src="images/stars.mp4" class="bg-stars" />
+        <!-- design by freepik -->
+        <img id="logo-bg" src="images/bskies no bg.png" class="bg-img" />
     </div>
 
     <!-- Navigation Bar -->
@@ -35,7 +34,7 @@
     </div>
 
     <!-- Landing Page -->
-    <div class="container-fluid py-md-5 d-flex align-items-center position-relative" style="height: 80vh">
+    <div class="container-fluid py-md-5 d-flex align-items-center" style="height: 80vh">
         <div class="col-4 col-md-6"></div>
         <div class="col-8 col-md-6 h-100 d-flex justify-content-center align-items-center position-relative">
             <div class="container-fluid d-flex flex-column justify-content-center position-absolute h-100"
@@ -54,7 +53,8 @@
 
     <!-- Introduction -->
     <section class="intro position-relative container-fluid">
-        <div class="container position-relative text-center d-flex align-items-center" style="height: 60vh;">
+        <div class="container position-relative text-center d-flex align-items-center"
+            style="height: 60vh; z-index: -1;">
             <h1 class="text-light">INNOVATE WITH BLACKSKIES</h1>
             <p class="text-light">Launched by UC Berkeley students with $225k AUM, we focus on solutions in
                 equity markets and venture capital</p>
@@ -71,7 +71,7 @@
     </section>
 
     <!-- Stats -->
-    <section class="stats container-fluid position-relative d-flex align-items-center" style="height: 60vh">
+    <section class="stats container-fluid position-relative d-flex align-items-center" style="height: 80vh">
         <div class="container position-relative d-flex">
             <div class="col-md-8">
                 <h1 class="text-light">Why Blackskies?</h1>
@@ -102,11 +102,59 @@
         </div>
     </section>
 
+    <!-- Client Portfolios -->
+    <section class="portfolio container-fluid position-relative d-flex align-items-center" style="height: 60vh">
+        <div class="container position-relative text-center d-flex align-items-center" style="height: 60vh;">
+            <h1 class="text-light">Sponsors</h1>
+            <p class="text-light">Launched by UC Berkeley students with $225k AUM, we focus on solutions in
+                equity markets and venture capital</p>
+        </div>
+    </section>
+
     <script>
-        $.get("src/navbar.html", function (data) {
+        $.get("navbar.html", function (data) {
             $("#nav-placeholder").replaceWith(data);
         });
-        // animation
+
+        const bg = document.getElementById("stars");
+        const img = document.getElementById("logo-bg")
+
+        window.onmousemove = e => {
+            const mouseX = e.clientX,
+                mouseY = e.clientY;
+
+            const xDec = mouseX / window.innerWidth,
+                yDec = mouseY / window.innerHeight;
+
+
+            const maxX = window.innerWidth;
+            const maxY = window.innerHeight;
+
+            const offsetX = window.innerWidth/2;
+            const offsetY = window.innerHeight/2;
+
+            const decrMove = 0.05
+
+            const panX = (maxX * xDec - offsetX) * decrMove;
+            const panY = (maxY * yDec - offsetY) * decrMove;
+
+            img.animate({
+                transform: `translate(calc(-50% + ${panX}px), calc(-50% + ${panY}px))`
+            }, {
+                duration: 4000,
+                fill: "forwards",
+                easing: "ease"
+            });
+            bg.animate({
+                transform: `translate(${panX}px, ${panY}px)`
+            }, {
+                duration: 4000,
+                fill: "forwards",
+                easing: "ease"
+            })
+        }
+
+        // scroll header animation
         // $(window).on("scroll", function () {
         //     var scrollPos = $(window).scrollTop();
         //     if (scrollPos < $(window).height() / 3) {
@@ -120,32 +168,6 @@
         //         }
         //     }
         // });
-
-        const stars = document.getElementById("stars");
-
-        window.onmousemove = e => {
-            const mouseX = e.clientX,
-                  mouseY = e.clientY;
-
-            const xDec = mouseX / window.innerWidth,
-                  yDec = mouseY / window.innerHeight;
-
-            const maxX = stars.offsetWidth - window.innerWidth;
-            const maxY = stars.offsetHeight - window.innerHeight;
-                  
-            const panX = maxX * xDec * -1;
-            const panY = maxY * yDec * -1;
-            console.log()
-
-            stars.animate({
-                transform: `translate(${panX}px, ${panY}px)`
-            }, {
-                duration: 4000,
-                fill: "forwards",
-                easing: "ease"
-            })
-        }
-
     </script>
 </body>
 
