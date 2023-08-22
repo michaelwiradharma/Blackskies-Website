@@ -1,6 +1,7 @@
 body {
   background-color: black;
   color: white;
+  font-family: "Arsenal", sans-serif;
 }
 
 #floating-bg {
@@ -45,11 +46,11 @@ body {
 }
 
 @keyframes fadeIn {
-    100% {
-      opacity: 1;
-      transform: translateY(-1rem);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(-1rem);
   }
+}
 
 .wave {
   position: absolute;
@@ -70,6 +71,32 @@ body {
 
 .intro {
   background: rgba(256, 256, 256, 0.5);
+  height: 60vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-content {
+  margin-bottom: 5rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.stats > .stat {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+.stats > .descr {
+  justify-self: center;
+  text-align: center;
+  align-self: center;
 }
 
 .wave .shape-fill {
@@ -99,6 +126,51 @@ body {
   opacity: 0.5;
 }
 
+.equities {
+  display: flex;
+}
+
+.equities > .title-content {
+  flex: 1;
+}
+
+.equities > .title-desc {
+  flex: 1;
+}
+
+.research {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.research > .images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.research > .images > figure {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.education > .items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 .sponsor {
-    width: 150px;
+  width: 150px;
 }

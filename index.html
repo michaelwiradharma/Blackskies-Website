@@ -9,8 +9,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400&display=swap"
+        rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -29,7 +32,7 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: black; position: sticky; top: 0px;">
+    <nav class="navbar navbar-expand-lg" style="background-color: black; position: sticky; top: 0px; z-index: 1;">
         <div class="container">
             <a class="navbar-brand text-light d-flex align-items-center" href="../index.html"><img
                     src="images/bskies logo.png" alt="Logo" width="60"
@@ -41,9 +44,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav w-100 justify-content-evenly">
-                    <a class="nav-link text-light" href="equities.html">Equities</a>
-                    <a class="nav-link text-light" href="ventures.html">Ventures</a>
-                    <a class="nav-link text-light" href="insights.html">Insights</a>
+                    <a class="nav-link text-light" href="#equities">Equities</a>
+                    <a class="nav-link text-light" href="#ventures">Ventures</a>
+                    <!-- <a class="nav-link text-light" href="insights.html">Insights</a> -->
                     <a class="nav-link text-light" href="team.html">Team</a>
                     <a class="nav-link text-light" href="application.html">Join Us</a>
                     <li class="nav-item dropdown">
@@ -63,14 +66,18 @@
     </nav>
 
     <!-- Landing Page -->
-    <div class="container-fluid py-md-5 d-flex align-items-center" style="height: 80vh">
-        <div class="col-4 col-md-6"></div>
-        <div class="col-8 col-md-6 h-100 d-flex justify-content-center align-items-center position-relative">
+    <div class="container py-md-5 d-flex align-items-center" style="height: 80vh">
+        <div class="col-6 col-md-6 p-5">
+            <h1>BLACKSKIES INVESTMENTS</h1>
+            <h3>Capture the Stars</h3>
+        </div>
+        <div class="col-6 col-md-6 h-100 d-flex justify-content-center align-items-center position-relative">
             <div class="container-fluid d-flex flex-column justify-content-center position-absolute h-100"
                 style="top: 0;">
-                <h1 class="header text-light">Blackskies Investments</h1>
-                <h3 class="header text-light">Capture the Stars</h3>
-                <p class="header text-light">We are a student-run investment fund at UC Berkeley.</p>
+
+                <p class="header text-light">We are a student led HF-VC fund founded in UC Berkeley, launching with an
+                    AUM of $250k. We
+                    invets in innovator-focused, AI-driven companies in public and private markets.</p>
                 <div class="header d-flex w-100">
                     <a href="contact.html" role="button" class="btn btn-outline-light me-2">Contact Us</a>
                     <a href="#" role="button" class="btn btn-outline-light me-2">Apply</a>
@@ -82,11 +89,22 @@
 
     <!-- Introduction -->
     <section class="intro position-relative container-fluid">
-        <div class="container position-relative text-center d-flex align-items-center"
-            style="height: 60vh; z-index: -1;">
+        <div class="intro-content container text-center">
             <h1 class="text-light">INNOVATE WITH BLACKSKIES</h1>
-            <p class="text-light">Launched by UC Berkeley students with $225k AUM, we focus on solutions in
-                equity markets and venture capital</p>
+            <p class="text-light">We are Cal's <strong style="color: #5b5d6b;">largest</strong> fund powered by a team
+                of 15 active members. We have experiences
+                in many facets of investments and have ready deployed our capital in innovative and industry-changing
+                startups and public
+                investments.</p>
+        </div>
+
+        <div class="container stats">
+            <h1 class="stat">$225,000</h1>
+            <h1 class="stat">$25,000</h1>
+            <h1 class="stat">3</h1>
+            <h2 class="descr">Assets Under Management</h2>
+            <h2 class="descr">Average Check Size</h2>
+            <h2 class="descr">Venture Capital Partners</h2>
         </div>
 
         <div class="wave">
@@ -99,28 +117,8 @@
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="stats container-fluid position-relative d-flex align-items-center" style="height: 60vh">
-        <div class="container position-relative d-flex">
-            <div class="col-md-8">
-                <h1 class="text-light">Why Blackskies?</h1>
-                <p class="text-light">We are Cal's largest fund xxxx. Blackskies Investments is powered by a team of
-                    15 active full-time members, who are capable of providing extensive research on your selected
-                    market.
-                </p>
-            </div>
-            <div class="col-md-2 p-0 text-light text-right">
-                <h1 class="mr-2 mb-0">$225k </h1>
-                <h1 class="mr-2 mb-0">$25k</h1>
-                <h1 class="mr-2 mb-0">3</h1>
-            </div>
-            <div class="col-md-2 p-0 text-light text-light">
-                <p class="my-3">AUM</p>
-                <p class="my-4">Avg Check Size</p>
-                <p class="my-4">VC Partners</p>
-            </div>
-        </div>
-
+    <!-- Wave 2 -->
+    <section class="container-fluid position-relative" style="height: 20vh">
         <div class="wave2">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                 preserveAspectRatio="none">
@@ -131,13 +129,44 @@
         </div>
     </section>
 
-    <!-- Client Portfolios -->
-    <section class="portfolio container-fluid position-relative" style="height: 60vh">
-        <div class="container position-relative text-center d-flex flex-column align-items-start" style="height: 60vh;">
-            <h1 class="text-light">Sponsors</h1>
+    <!-- Equities -->
+    <section id="equities" style="height: 60vh">
+        <div class="equities container">
+            <div class="title-content">
+                <h1>EQUITIES</h1>
+                <h3>Stock Investment & Trading</h3>
+            </div>
+            <div class="title-desc">
+                <p>
+                    Blackskies dedicates the equities team to researchh and invest in undervalued stocks in the TMT,
+                    Consumer, and Biotech industries. Additionally, we employ quantitative techniques and economic
+                    trends to assist our trading decisions.
+                </p>
+            </div>
+        </div>
 
-            <img src="images/sponsors/karu.jpg" class="sponsor karu"/>
-            <img src="images/sponsors/grammable.png" class="sponsor grammable">
+        <div class="research container">
+            <h1>Our Research</h1>
+            <h3>Not Financial Advice, For Educational Purposes Only</h3>
+            <div class="images">
+                <figure>
+                    <img src="images/robinhood.png" alt="" height=300 width=300>
+                    <figcaption>NASDAQ: HOOD</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/wallstreet.jpeg" alt="" height="300" width="300" />
+                    <figcaption>The Market Bottom</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="education container">
+            <h1>What You Will Learn</h1>
+            <div class="items">
+                <p>Screenings and Ramping On Company Filings</p>
+                <p>Fnancial Projections and Model Construction</p>
+                <p>Thesis Generation and Creating Trades</p>
+            </div>
         </div>
     </section>
 
@@ -160,8 +189,8 @@
             const maxX = window.innerWidth;
             const maxY = window.innerHeight;
 
-            const offsetX = window.innerWidth/2;
-            const offsetY = window.innerHeight/2;
+            const offsetX = window.innerWidth / 2;
+            const offsetY = window.innerHeight / 2;
 
             const decrMove = 0.05
 
