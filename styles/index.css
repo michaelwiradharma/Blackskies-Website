@@ -126,6 +126,10 @@ body {
   opacity: 0.5;
 }
 
+#equities {
+  padding-top: 5rem;
+}
+
 .equities {
   display: flex;
 }
