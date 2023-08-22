@@ -23,15 +23,44 @@
 
 <body>
     <div class="floating-bg">
-        <img id="stars" src="images/stars.mp4" class="bg-stars" />
+        <img id="stars" src="images/stars.gif" class="bg-stars" />
         <!-- design by freepik -->
         <img id="logo-bg" src="images/bskies no bg.png" class="bg-img" />
     </div>
 
     <!-- Navigation Bar -->
-    <div id="nav-placeholder" style="position: fixed; top: 0px; width: 100%; z-index: 1">
-        <div id="nav-content-p"></div>
-    </div>
+    <nav class="navbar navbar-expand-lg" style="background-color: black; position: sticky; top: 0px;">
+        <div class="container">
+            <a class="navbar-brand text-light d-flex align-items-center" href="../index.html"><img
+                    src="images/bskies logo.png" alt="Logo" width="60"
+                    class="d-inline-block align-text-top" />Blackskies</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav w-100 justify-content-evenly">
+                    <a class="nav-link text-light" href="equities.html">Equities</a>
+                    <a class="nav-link text-light" href="ventures.html">Ventures</a>
+                    <a class="nav-link text-light" href="insights.html">Insights</a>
+                    <a class="nav-link text-light" href="team.html">Team</a>
+                    <a class="nav-link text-light" href="application.html">Join Us</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Contact us</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Landing Page -->
     <div class="container-fluid py-md-5 d-flex align-items-center" style="height: 80vh">
@@ -71,7 +100,7 @@
     </section>
 
     <!-- Stats -->
-    <section class="stats container-fluid position-relative d-flex align-items-center" style="height: 80vh">
+    <section class="stats container-fluid position-relative d-flex align-items-center" style="height: 60vh">
         <div class="container position-relative d-flex">
             <div class="col-md-8">
                 <h1 class="text-light">Why Blackskies?</h1>
@@ -103,11 +132,12 @@
     </section>
 
     <!-- Client Portfolios -->
-    <section class="portfolio container-fluid position-relative d-flex align-items-center" style="height: 60vh">
-        <div class="container position-relative text-center d-flex align-items-center" style="height: 60vh;">
+    <section class="portfolio container-fluid position-relative" style="height: 60vh">
+        <div class="container position-relative text-center d-flex flex-column align-items-start" style="height: 60vh;">
             <h1 class="text-light">Sponsors</h1>
-            <p class="text-light">Launched by UC Berkeley students with $225k AUM, we focus on solutions in
-                equity markets and venture capital</p>
+
+            <img src="images/sponsors/karu.jpg" class="sponsor karu"/>
+            <img src="images/sponsors/grammable.png" class="sponsor grammable">
         </div>
     </section>
 
