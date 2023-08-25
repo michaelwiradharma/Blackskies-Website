@@ -1,7 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: black;
   color: white;
   font-family: "Arsenal", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+a, p {
+  font-size: 1.25rem;
+}
+
+.active {
+  text-decoration: underline;
 }
 
 #floating-bg {
@@ -42,7 +63,6 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: 0.2ms;
-  z-index: 1;
 }
 
 @keyframes fadeIn {
@@ -69,12 +89,13 @@ body {
   height: 150px;
 }
 
-.intro {
+#about {
   background: rgba(256, 256, 256, 0.5);
   height: 60vh;
   justify-content: center;
   display: flex;
   flex-direction: column;
+  scroll-margin-top: 250px;
 }
 
 .intro-content {
@@ -127,10 +148,13 @@ body {
 }
 
 #equities {
-  padding-top: 5rem;
+  scroll-margin-top: 5rem;
+  margin: 5rem 1rem;
+  padding: 5rem 0rem;
 }
 
 .equities {
+  margin-bottom: 3rem;
   display: flex;
 }
 
@@ -143,27 +167,18 @@ body {
 }
 
 .research {
+  margin-top: 3rem;
+  padding: 3rem 1rem;
   align-items: center;
   display: flex;
   flex-direction: column;
-}
-
-.research > .images {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.research > .images > figure {
-  text-align: center;
-  font-size: 1.5rem;
 }
 
 .education {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 3rem 1rem;
 }
 
 .education > .items {
@@ -175,6 +190,48 @@ body {
   text-align: center;
 }
 
-.sponsor {
-  width: 150px;
+#ventures {
+  scroll-margin-top: 5rem;
+  margin: 5rem;
+  padding: 5rem 1rem;
+}
+
+#ventures > .ventures {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+}
+
+#ventures > .ventures > .title-desc {
+  flex: 2
+}
+
+#ventures > .ventures > .title-content {
+  flex: 1
+}
+
+#ventures > .portfolio {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.images > figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.images > figure .title {
+  font-size: 2rem;
 }
