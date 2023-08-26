@@ -43,13 +43,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav w-100 justify-content-around">
+                <ul class="custom-nav navbar-nav w-100 justify-content-start">
                     <a class="nav-link text-light" href="#about">ABOUT US</a>
                     <a class="nav-link text-light" href="#equities">EQUITIES</a>
                     <a class="nav-link text-light" href="#ventures">VENTURES</a>
                     <!-- <a class="nav-link text-light" href="insights.html">Insights</a> -->
                     <a class="nav-link text-light" href="team.html">TEAM</a>
-                    <a class="nav-link text-light" href="application.html">JOIN US</a>
+                    <a class="nav-link text-light" href="https://forms.gle/oZtAAQVvuUgcUXrv8">JOIN US</a>
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -67,44 +67,42 @@
     </nav>
 
     <!-- Landing Page -->
-    <div class="container py-md-5 d-flex align-items-center" style="height: 80vh">
-        <div class="col-6 col-md-6 p-5">
-            <h1>BLACKSKIES INVESTMENTS</h1>
-            <h3>Capture the Stars</h3>
-        </div>
-        <div class="col-6 col-md-6 h-100 d-flex justify-content-center align-items-center position-relative">
-            <div class="container-fluid d-flex flex-column justify-content-center position-absolute h-100">
-                <p class="header text-light">We are a student led HF-VC fund founded in UC Berkeley, launching with an
-                    AUM of $250k. We
-                    invets in innovator-focused, AI-driven companies in public and private markets.</p>
-                <div class="header d-flex w-100">
+    <section id="landing" class="landing-container container-fluid">
+        <div class="landing container">
+            <div class="title">
+                <h1 class="header">BLACKSKIES INVESTMENTS</h1>
+                <h3 class="header">Capture the Stars</h3>
+            </div>
+            <div class="descr">
+                <p class="header-delayed text-light">We are a student led HF-VC fund founded in UC Berkeley, launching
+                    with
+                    an AUM of $270k. We invest in innovator-focused, AI-driven companies in public and private markets.
+                </p>
+                <div class="header-delayed d-flex w-100">
                     <a href="contact.html" role="button" class="btn btn-outline-light me-2">Contact Us</a>
-                    <a href="#" role="button" class="btn btn-outline-light me-2">Apply</a>
+                    <a href="https://forms.gle/oZtAAQVvuUgcUXrv8" role="button"
+                        class="btn btn-outline-light me-2">Apply</a>
                     <!-- <a type="button" class="btn btn-outline-light mx-2">Ventures</a> -->
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Introduction -->
-    <section id="about" class="position-relative container-fluid">
+    <section id="about" class="intro position-relative container-fluid">
         <div class="intro-content container text-center">
-            <h2 class="text-light">INNOVATE WITH BLACKSKIES</h1>
-                <p class="text-light">We are Cal's <strong style="color: #5b5d6b;">largest</strong> fund powered by a
-                    team
-                    of 15 active members. We have experiences
-                    in many facets of investments and have ready deployed our capital in innovative and
-                    industry-changing
-                    startups and public
-                    investments.</p>
+            <h1 class="text-light">INNOVATE WITH BLACKSKIES</h1>
+            <p class="text-light">We are Berkeley's <strong style="color: #5b5d6b;">largest</strong> fund powered by
+                a team of 15 active members. We have experiences in many facets of investments and have ready
+                deployed our capital in innovative and industry-changing startups and public investments.</p>
         </div>
         <div class="container stats">
-            <h2 class="stat">$225,000</h2>
+            <h2 class="stat">$270,000</h2>
             <h2 class="stat">$25,000</h2>
-            <h2 class="stat">3</h2>
-            <h3 class="descr">Assets Under Management</h3>
-            <h3 class="descr">Average Check Size</h3>
-            <h3 class="descr">Venture Capital Partners</h>
+            <h2 class="stat">5</h2>
+            <h2 class="descr">Assets Under Management</h2>
+            <h2 class="descr">Average Check Size</h2>
+            <h2 class="descr">Venture Capital Partners</h2>
         </div>
         <div class="wave">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -143,15 +141,15 @@
             </div>
         </div>
         <div class="research container">
-            <h1>Our Research</h1>
-            <h3>Not Financial Advice, For Educational Purposes Only</h3>
+            <h1 class="title">Our Research</h1>
+            <h3 class="footnote">Not Financial Advice, For Educational Purposes Only</h3>
             <div class="images">
                 <figure>
-                    <img src="images/robinhood.png" alt="" height=300 width=300>
+                    <img src="images/robinhood.png" alt="">
                     <figcaption class="title">NASDAQ: HOOD</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/wallstreet.jpeg" alt="" height="300" width="300" />
+                    <img src="images/wallstreet.jpeg" alt="" />
                     <figcaption class="title">The Market Bottom</figcaption>
                 </figure>
             </div>
@@ -190,8 +188,9 @@
                 </figure>
                 <figure>
                     <img src="images/portfolio/karu.jpg" alt="" height="300" width="300" />
-                    <figcaption><span class="title">IcyTutors</span><br />Personalized curriculum with interactive practice led by a powerful
-                            personal 24/7 AI tutor for every student to reach mastery.</figcaption>
+                    <figcaption><span class="title">IcyTutors</span><br />Personalized curriculum with interactive
+                        practice led by a powerful
+                        personal 24/7 AI tutor for every student to reach mastery.</figcaption>
                 </figure>
             </div>
         </div>
@@ -266,7 +265,7 @@
             const panY = (maxY * yDec - offsetY) * decrMove;
 
             img.animate({
-                transform: `translate(calc(-50% + ${panX}px), calc(-50% + ${panY}px))`
+                transform: `translate(calc(-50% + ${panX * 1.5}px), calc(-50% + ${panY * 1.5}px))`
             }, {
                 duration: 4000,
                 fill: "forwards",
