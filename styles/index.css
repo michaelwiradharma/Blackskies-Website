@@ -3,33 +3,48 @@
 }
 
 body {
-  background-color: black;
+  background-color: #060606;
   color: white;
   font-family: "Arsenal", sans-serif;
 }
 
 @media (min-width: 576px) {
-  .container-sm, .container {
+  .container-sm,
+  .container {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 1320px;
   }
 }
@@ -40,17 +55,17 @@ h1 {
 h2 {
   font-size: 1.25rem;
 }
-h3{
+h3 {
   font-size: 1rem;
 }
 
-.navbar-toggler .navbar-toggler-icon{
+.navbar-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   color: white;
 }
 
 .custom-nav {
-  display:flex;
+  display: flex;
   align-items: end;
   padding-right: 20px;
 }
@@ -60,7 +75,8 @@ h3{
 }
 
 #floating-bg {
-  position: inherit;
+  background-color: #060606;
+  position: fixed;
   top: 0;
   overflow: hidden;
   z-index: -1000;
@@ -73,15 +89,15 @@ h3{
   top: 50%;
   transform: translate(-50%, -50%);
   transform-origin: center;
-  position: fixed;
+  position: absolute;
   z-index: -1000;
-  opacity: 50%;
+  opacity: 20%;
 }
 
 .bg-stars {
   transform-origin: center;
-  opacity: 30%;
-  position: fixed;
+  opacity: 20%;
+  position: absolute;
   z-index: -1000;
   width: 150vw;
 }
@@ -100,7 +116,7 @@ h3{
 }
 
 .landing {
-  padding: 3rem 2rem;  
+  padding: 3rem 2rem;
   margin: 0rem 0rem 5rem 0rem;
   display: flex;
   flex-direction: column;
@@ -161,23 +177,24 @@ h3{
 
 #about {
   background: rgba(256, 256, 256, 0.5);
-  height: 60vh;
+  min-height: 80vh;
   justify-content: center;
   display: flex;
   flex-direction: column;
   scroll-margin-top: 250px;
 }
 
-.intro-content {
-  margin-bottom: 1rem;
+#about .card {
+  background-color: #060606;
+  filter: drop-shadow(15px 10px 0px silver);
+  color: white;
+  opacity: 90%;
+  height: 100%;
+  border-radius: 1rem;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(3, 1fr);
-  column-gap: 20px;
-  grid-auto-flow: column;
+.intro-content {
+  margin-bottom: 2rem;
 }
 
 .stats > .stat {
@@ -189,6 +206,7 @@ h3{
 }
 
 .wave2 {
+  background-color: #060606;
   position: absolute;
   top: 0;
   left: 0;
@@ -211,27 +229,31 @@ h3{
 }
 
 #equities {
+  background-color: #060606;
   scroll-margin-top: 5rem;
   margin: 5rem 1rem;
   padding: 5rem 0rem;
 }
 
 .equities {
+  margin-top: 5rem;
   margin-bottom: 3rem;
   display: flex;
+  align-items: center;
 }
 
 .equities > .title-content {
-  flex: 1;
+  flex: 3;
 }
 
 .equities > .title-desc {
-  flex: 1;
+  flex: 4;
 }
 
 .research {
-  margin-top: 3rem;
-  padding: 3rem 0rem;
+  background-color: rgba(256, 256, 256, 0.4);
+  border-radius: 1rem;
+  padding: 1rem 1rem;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -239,11 +261,12 @@ h3{
 
 .research > .title {
   align-self: flex-start;
+  margin-bottom: 3rem;
   margin-left: 1rem;
 }
 
-.research > .footnote {
-  color: gray
+.research > .title > .footnote {
+  color: darkgray;
 }
 
 .images > figure > img {
@@ -259,12 +282,14 @@ h3{
 }
 
 .education > .items {
+  padding: 3rem;
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template: repeat(3, 1fr);
   gap: 10px;
   width: 100%;
   font-size: 1rem;
-  text-align: left;
+  text-align: center;
+  justify-items: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -286,10 +311,10 @@ h3{
     display: flex;
     justify-content: center;
   }
-  
+
   .landing {
     min-height: 80vh;
-    padding: 3rem 2rem;  
+    padding: 3rem 2rem;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -298,7 +323,7 @@ h3{
   .landing > .descr {
     padding-top: 3rem;
   }
-  
+
   .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -341,6 +366,8 @@ h3{
 
   #ventures > .ventures > .title-desc {
     flex: 2;
+    text-align: right;
+    padding-right: 3rem;
   }
 
   #ventures > .ventures > .title-content {
