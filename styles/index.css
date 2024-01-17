@@ -251,6 +251,7 @@ h3 {
 }
 
 .research {
+  max-width: 80vw;
   background-color: rgba(256, 256, 256, 0.4);
   border-radius: 1rem;
   padding: 1rem 1rem;
@@ -260,7 +261,6 @@ h3 {
 }
 
 .research > .title {
-  align-self: flex-start;
   margin-bottom: 3rem;
   margin-left: 1rem;
 }
@@ -375,6 +375,10 @@ h3 {
   }
 
   #ventures > .portfolio {
+    max-width: 80vw;
+    background-color: rgba(256, 256, 256, 0.4);
+    border-radius: 1rem;
+    padding: 1rem 1rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
     display: flex;
